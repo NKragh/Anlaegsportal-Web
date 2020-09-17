@@ -28,7 +28,7 @@ function search() {
       coordinate = []
       data.forEach(a => {
         console.log(a)
-        liste.innerHTML += `<li onclick="navigate()" class="optionlist" value="'+${a.adresse.id}+'">${a.tekst}</li>`
+        liste.innerHTML += `<li onclick="navigate('address')" class="optionlist" value="'+${a.adresse.id}+'">${a.tekst}</li>`
         coordinate.push({
           x: a.adresse.x,
           y: a.adresse.y
