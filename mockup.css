@@ -1,0 +1,126 @@
+* {
+    font-family: Helvetica;
+}
+
+ul {
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+.optionlist {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: left;
+    color: black;
+    background: #f5f6f9;
+    margin: 2px 0;
+    cursor: pointer;
+    
+}
+
+.optionlist:hover {
+    background: #3a5b78;
+}
+
+a.optionlist {
+    color: black;
+}
+
+a.optionlist:hover {
+    color: white;
+}
+
+.row {
+    background: #FFF;
+    margin: 0;
+}
+
+.sidemenu {
+    min-height: 600px;
+    /* border-bottom: 2px solid black; */
+    /* border: 2px solid black; */
+}
+
+a.menu {
+    color: white;
+}
+
+html {
+    margin: 0 10%;
+}
+
+body {
+
+    background: #f5f6f9;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    background-color: #3a5b78;
+    color: whitesmoke;
+    padding: 10px;
+    border: 1px solid aliceblue;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid aliceblue;
+}
+
+.bold {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.qr {
+    border: 1px solid lightgray;
+    height: 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+li {
+    padding: 5px;
+}
+
+.center {
+    text-align: center;
+}
+
+.actionbutton {
+    padding: 5px;
+}
+
+.table {
+    display: table;
+    border: 1px solid lightslategrey;
+}
+
+.trow {
+    display: table-row;
+    color: black;
+}
+
+.cell {
+    display: table-cell;
+    border: 1px solid lightslategrey;
+}
+
+.hcell {
+    display: table-cell;
+    border: 1px solid black;
+    background-color: #3a5b78;
+    color: #FFF;
+    font-size: 1.2em;
+}
+
+.trow:hover {
+    background-color: lightgray;
+    color: black;
+}

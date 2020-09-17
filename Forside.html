@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Mockup for all installation on one address</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <script src="https://kit.fontawesome.com/a29e7d9b96.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="mockup.css">
+</head>
+
+<header id="headerplaceholder"></header>
+
+<body>
+
+  <div class="row sidemenu a">
+
+    <div class="col-sm">
+      <div class="row" style="border-bottom: 1px solid black;">
+        <h4>Find din adresse her:</h4>
+      </div>
+      <div class="row" style="overflow: auto; display: block;">
+        <label for="iaddress">Adresse:</label><br>
+        <input class="input" type="text" name="iaddress" id="iaddress" placeholder="Indtast adresse" list="addresses"
+          onselect="navigate()" oninput="search()" autofocus="true">
+        <div style="width: fit-content;">
+          <ul id="optionlist">
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+
+
+        <div class="earth3dmap-com">
+          <iframe id="iframemap"
+            src="https://maps.google.com/maps?q=Penselstrøget+30&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+            width="100%" height="500" frameborder="0" scrolling="no" target="_top"></iframe>
+        </div>
+      </div>
+
+
+
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+      </script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+      </script>
+
+      <script src="mockup.js"></script>
+      <script>
+        $(function () {
+          $("#navbarplaceholder").load("navbar.html");
+          $("#headerplaceholder").load("header.html");
+        });
+      </script>
+
+</body>
+
+</html>
