@@ -1,6 +1,9 @@
 * {
     font-family: Helvetica;
 }
+a {
+    color: black;
+}
 
 a.header {
     color: #3a5b78;
@@ -25,10 +28,6 @@ ul {
 
 .optionlist:hover {
     background: #3a5b78;
-}
-
-a.optionlist {
-    color: black;
 }
 
 a.optionlist:hover {
@@ -128,3 +127,4 @@ li {
     background-color: lightgray;
     color: black;
 }
+
