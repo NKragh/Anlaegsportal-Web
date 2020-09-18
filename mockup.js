@@ -1,9 +1,30 @@
-
-function classtest() {
-test = new Installation("Test")
-
-console.log(test.Name)
+class Installation {
+  id
+  status
+  darstatus
+  vejkode
+  vejnavn
+  adresseringsvejnavn
+  husnr
+  etage
+  dør
+  supplerendebynavn
+  postnr
+  postnrnavn
+  stormodtagerpostnr
+  stormodtagerpostnrnavn
+  kommunekode
+  adgangsadresseid
+  x
+  y
+  href
+  tekst
+  constructor() {}
 }
+let installation = new Installation();
+
+
+
 document.onload = setlinks()
 
 function navigate(input) {
@@ -35,17 +56,17 @@ function search() {
       liste.innerHTML = ""
       coordinate = []
       data.forEach(a => {
-        console.log(a)
+        // console.log(a)
         liste.innerHTML += `<li onclick="navigate('address')" class="optionlist" value="'+${a.adresse.id}+'">${a.tekst}</li>`
         coordinate.push({
           x: a.adresse.x,
           y: a.adresse.y
         })
       });
-      // if (coordinate.length == 1) {
-      //   console.log(coordinate)
-      //   changemap(data[0])
-      // }
+      if (coordinate.length == 1) {
+        installation = data[0]
+        console.log(installation.tekst)
+      }
     })
 }
 
@@ -58,11 +79,11 @@ function changemap(data) {
   kort.src = str
 }
 
-var liste = []
+var linkliste = []
 
 function setlinks() {
-  liste = document.getElementsByName('installationLink')
-  liste.forEach(l => {
+  linkliste = document.getElementsByName('installationLink')
+  linkliste.forEach(l => {
     l.href = "mockup-installation.html"
   });
 }
