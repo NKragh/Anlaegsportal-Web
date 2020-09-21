@@ -21,9 +21,14 @@ class Installation {
   tekst
   constructor() {}
 }
+
 let installation = new Installation();
 
-
+async function testapi() {
+  
+  let result = await fetch('http://localhost:51456/api/installations')
+  console.log(result)
+}
 
 document.onload = setlinks()
 
