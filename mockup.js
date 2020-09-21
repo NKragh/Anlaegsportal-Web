@@ -24,10 +24,13 @@ class Installation {
 
 let installation = new Installation();
 
-async function testapi() {
+function testapi() {
   
-  let result = await fetch('http://localhost:51456/api/installations')
-  console.log(result)
+  fetch('http://localhost:51456/api/installations')
+    .then(response => response.json) 
+    .then(data => {
+      console.log(data)
+    });
 }
 
 document.onload = setlinks()
