@@ -22,18 +22,24 @@ class Installation {
   constructor() {}
 }
 
-let installation = new Installation();
+let instlist = [];
 
 function testapi() {
-  
+
   fetch('http://localhost:51456/api/installations')
-    .then(response => response.json) 
-    .then(data => {
-      console.log(data)
-    });
+    .then(response => response.json())
+    .then(body => {
+      for (let i = 0; i < body.length; i++) {
+        const inst = body[i];
+        instlist.push(inst)
+      }
+    })
+  
+  console.log(instlist)
 }
 
 document.onload = setlinks()
+document.onload = testapi()
 
 function navigate(input) {
   switch (input) {
