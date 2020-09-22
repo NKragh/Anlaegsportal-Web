@@ -22,11 +22,12 @@ class Installation {
   constructor() {}
 }
 
-let instlist = [];
 
 function testapi() {
+  let instlist = [];
 
-  fetch('http://localhost:51456/api/installations')
+  // fetch('http://localhost:51456/api/installations')
+  fetch('https://lekondbrest.azurewebsites.net/api/installations')
     .then(response => response.json())
     .then(body => {
       for (let i = 0; i < body.length; i++) {
@@ -79,7 +80,7 @@ function search() {
       });
       if (coordinate.length == 1) {
         installation = data[0]
-        console.log(installation.tekst)
+        console.log(installation)
       }
     })
 }
