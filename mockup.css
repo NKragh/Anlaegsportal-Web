@@ -113,6 +113,7 @@ li {
 .cell {
     display: table-cell;
     border: 1px solid lightslategrey;
+    padding: 0 8px;
 }
 
 .hcell {
@@ -121,6 +122,7 @@ li {
     background-color: #3a5b78;
     color: #FFF;
     font-size: 1.2em;
+    padding: 0 8px;
 }
 
 .trow:hover {

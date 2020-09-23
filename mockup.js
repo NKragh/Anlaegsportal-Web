@@ -23,27 +23,11 @@ class Installation {
 }
 
 
-function testapi() {
-  let instlist = [];
-
-  // fetch('http://localhost:51456/api/installations')
-  fetch('https://lekondbrest.azurewebsites.net/api/installations')
-    .then(response => response.json())
-    .then(body => {
-      for (let i = 0; i < body.length; i++) {
-        const inst = body[i];
-        instlist.push(inst)
-      }
-    })
-  
-  console.log(instlist)
-}
-
-document.onload = setlinks()
-document.onload = testapi()
 
 function navigate(input) {
   switch (input) {
+    case "installation":
+      window.location.href = 'mockup-installation.html'
     case "address":
       window.location.href = 'mockup-address.html'
       break;
@@ -53,9 +37,9 @@ function navigate(input) {
       break;
   }
 }
+
 var coordinate = []
 var str = "";
-
 
 function search() {
   var ele = document.getElementById('iaddress')
@@ -80,21 +64,15 @@ function search() {
       });
       if (coordinate.length == 1) {
         installation = data[0]
-        console.log(installation)
+        // changemap(installation)
       }
     })
 }
 
-function changemap(data) {
-  var kort = document.getElementById('iframemap')
-  console.log(data)
-  // kort.src = `https://www.google.com/maps/${coordinate[0].x}, ${coordinate[0].y}, 12<`
-  str = `https://maps.google.com/maps?q=${data.adresse.vejnavn}+${data.adresse.husnr}&amp;ie=UTF8&amp;iwloc=&amp;output=embed`
-  // kort.src = "https://www.w3schools.com" + "&output=embed"
-  kort.src = str
-}
-
+//Sætter links på rækker i tabellen.
+document.onload = setlinks()
 var linkliste = []
+
 
 function setlinks() {
   linkliste = document.getElementsByName('installationLink')
