@@ -40,7 +40,7 @@ function search() {
   var ele = document.getElementById('iaddress')
   var value = ele.value
 
-  console.log(value)
+  // console.log(value)
 
   fetch(`https://dawa.aws.dk/adresser/autocomplete?q=${value} &fuzzy=`)
     .then(response => response.json())
@@ -51,7 +51,7 @@ function search() {
       coordinate = []
       data.forEach(a => {
         // console.log(a)
-        liste.innerHTML += `<li onclick="navigate('address')" class="optionlist" value="'+${a.adresse.id}+'">${a.tekst}</li>`
+        liste.innerHTML += `<li onclick="navigate('address')" class="optionlist" id="${a.adresse.id}" value="${a.adresse.id}">${a.tekst}</li>` //
         coordinate.push({
           x: a.adresse.x,
           y: a.adresse.y
@@ -59,7 +59,21 @@ function search() {
       });
       if (coordinate.length == 1) {
         installation = data[0]
+        var bbrid = document.getElementById(data[0].adresse.id).getAttribute("value")
+        console.log(bbrid)
+
+        selected(bbrid)
         // changemap(installation)
       }
+    })
+}
+
+function selected(bbrid) {
+  // fetch(`https://www.lekondbrest.azurewebsites.net/api/installations/${bbrid}`)
+  fetch(`http://localhost:51456/api/installations/${bbrid}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+
     })
 }
