@@ -1,3 +1,6 @@
+/**
+ * Gets information from the CVR API based on input text
+ */
 function hentcvr() {
   result = {}
 
@@ -15,6 +18,10 @@ function hentcvr() {
     })
 }
 
+/**
+ * Fills result into a html list
+ * @param {Object} data - JSON data from CVR API
+ */
 function fyldresult(data) {
   let div = document.getElementById('resultdiv')
   div.innerHTML = '<ul style="list-style-type:none;">'
