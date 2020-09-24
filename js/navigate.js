@@ -5,10 +5,10 @@ function navigate(input) {
       window.location.href = '/'
       break;
     case "address":
-      window.location.href = 'mockup-address.html'
+      window.location.href = 'address.html'
       break;
     case "installation":
-      window.location.href = 'mockup-installation.html'
+      window.location.href = 'installation.html'
       break;
     case "edit":
       window.location.href = 'edit.html'

@@ -31,6 +31,6 @@ var linkliste = []
 function setlinks() {
   linkliste = document.getElementsByName('installationLink')
   linkliste.forEach(l => {
-    l.href = "mockup-installation.html"
+    l.href = "installation.html"
   });
 }
