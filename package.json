@@ -17,6 +17,5 @@
   },
   "homepage": "https://github.com/NKragh/Anlaegsportal-Web#readme",
   "dependencies": {
-    "tedious": "^9.2.1"
   }
 }

@@ -23,7 +23,7 @@ class Installation {
 }
 
 
-
+//Navigate() kan bruges til at navigerer mellem 
 function navigate(input) {
   switch (input) {
     case "installation":
