@@ -5,13 +5,7 @@ function navigate(input) {
       window.location.href = '/'
       break;
     case "address":
-      try {
-        // document.getElementById('installationlink')
-        window.location.href = 'address.html'
-      } catch (error) {
-        
-        window.location.href = 'address.html'
-      }
+      window.location.href = 'address.html'
       break;
     case "installation":
       window.location.href = 'installation.html'
@@ -29,3 +23,5 @@ function navigate(input) {
       break;
   }
 }
+
+export { navigate };

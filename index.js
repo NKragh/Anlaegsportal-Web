@@ -1,3 +1,10 @@
+import {
+  selected
+} from './modules/selection.js'
+
+import {
+  navigate
+} from './js/navigate.js'
 /**
  * Function that sets the map at the coordinates corresponding to the found address in search.
  * @param {Object} data  - Obsolete parameter.
@@ -10,6 +17,8 @@ function changemap(data) {
   // kort.src = "https://www.w3schools.com" + "&output=embed"
   // kort.src = str
 }
+
+document.querySelector('input').addEventListener('input', search)
 
 /**
  * Test function that gets installations from REST
@@ -26,12 +35,11 @@ function testapi() {
         instlist.push(inst)
       }
     })
-  
+
   console.log(instlist)
 }
 
 var coordinate = []
-var str = "";
 
 /**
  * Function that searches in the BBR's autocomplete API
@@ -51,29 +59,26 @@ function search() {
       coordinate = []
       data.forEach(a => {
         // console.log(a)
-        liste.innerHTML += `<li onclick="navigate('address')" class="optionlist" id="${a.adresse.id}" value="${a.adresse.id}">${a.tekst}</li>` //
-        coordinate.push({
-          x: a.adresse.x,
-          y: a.adresse.y
-        })
+        liste.innerHTML += `<li class="optionlist" id="${a.adresse.id}">${a.tekst}</li>`
       });
-      // if (coordinate.length == 1) {
-      //   installation = data[0]
-      //   var bbrid = document.getElementById(data[0].adresse.id).getAttribute("value")
-      //   console.log(bbrid)
-
-      //   selected(bbrid)
-      //   // changemap(installation)
-      // }
+      var temp = document.getElementsByClassName('optionlist')
+      for (const li of temp) {
+        li.addEventListener('click', function () {
+          localStorage.setItem('bbrid', li.id)
+          navigate('address')
+        })
+      }
     })
 }
 
-function selected(bbrid) {
-  // fetch(`https://www.lekondbrest.azurewebsites.net/api/installations/${bbrid}`)
-  fetch(`http://localhost:51456/api/installations/${bbrid}`)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data)
+// var selectedAddress = ""
 
-    })
-}
+// /**
+//  * Gets installations from database on selected BBR address.
+//  * @param {Integer} bbrid - BBRid, used as query parameter in REST API
+//  */
+// function selected(bbrid) {
+//   selectedAddress = bbrid
+
+//   navigate('address')
+// }
