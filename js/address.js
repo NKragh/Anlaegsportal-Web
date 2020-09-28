@@ -3,7 +3,7 @@ document.onload = setlinks()
 var linkliste = []
 
 /**
- * Sets links on rows in table
+ * Sets links on rows in tableasd
  */
 function setlinks() {
   linkliste = document.getElementsByName('installationLink')
