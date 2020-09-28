@@ -48,7 +48,7 @@ function search() {
   var ele = document.getElementById('iaddress')
   var value = ele.value
 
-  // console.log(value)
+  // console.log(value)asd
 
   fetch(`https://dawa.aws.dk/adresser/autocomplete?q=${value} &fuzzy=`)
     .then(response => response.json())
@@ -70,15 +70,3 @@ function search() {
       }
     })
 }
-
-// var selectedAddress = ""
-
-// /**
-//  * Gets installations from database on selected BBR address.
-//  * @param {Integer} bbrid - BBRid, used as query parameter in REST API
-//  */
-// function selected(bbrid) {
-//   selectedAddress = bbrid
-
-//   navigate('address')
-// }
