@@ -57,14 +57,14 @@ function search() {
           y: a.adresse.y
         })
       });
-      if (coordinate.length == 1) {
-        installation = data[0]
-        var bbrid = document.getElementById(data[0].adresse.id).getAttribute("value")
-        console.log(bbrid)
+      // if (coordinate.length == 1) {
+      //   installation = data[0]
+      //   var bbrid = document.getElementById(data[0].adresse.id).getAttribute("value")
+      //   console.log(bbrid)
 
-        selected(bbrid)
-        // changemap(installation)
-      }
+      //   selected(bbrid)
+      //   // changemap(installation)
+      // }
     })
 }
 

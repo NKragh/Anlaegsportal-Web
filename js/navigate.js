@@ -5,7 +5,13 @@ function navigate(input) {
       window.location.href = '/'
       break;
     case "address":
-      window.location.href = 'address.html'
+      try {
+        // document.getElementById('installationlink')
+        window.location.href = 'address.html'
+      } catch (error) {
+        
+        window.location.href = 'address.html'
+      }
       break;
     case "installation":
       window.location.href = 'installation.html'

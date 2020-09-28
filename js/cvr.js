@@ -23,14 +23,9 @@ function hentcvr() {
  * @param {Object} data - JSON data from CVR API
  */
 function fyldresult(data) {
-  let div = document.getElementById('resultdiv')
-  div.innerHTML = '<ul style="list-style-type:none;">'
-
+  let div = document.getElementById('resultlist')
   for (const key in data) {
     const value = data[key];
     div.innerHTML += `<li>${key} : ${value}</li>`
   }
-
-  div.innerHTML += '</ul>'
-
 }
