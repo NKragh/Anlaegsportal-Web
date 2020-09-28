@@ -1,10 +1,10 @@
 import {
   selected
-} from './modules/selection.js'
+} from '../modules/selection.js'
 
 import {
   navigate
-} from './js/navigate.js'
+} from './navigate.js'
 /**
  * Function that sets the map at the coordinates corresponding to the found address in search.
  * @param {Object} data  - Obsolete parameter.
