@@ -4,8 +4,7 @@
   "description": "",
   "main": "db.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "jsdoc": "./node_modules/jsdoc/jsdoc.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -17,7 +16,5 @@
     "url": "https://github.com/NKragh/Anlaegsportal-Web/issues"
   },
   "homepage": "https://github.com/NKragh/Anlaegsportal-Web#readme",
-  "dependencies": {
-    "jsdoc": "^3.6.6"
-  }
+  "dependencies": {}
 }
