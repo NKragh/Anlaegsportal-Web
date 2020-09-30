@@ -1,11 +1,11 @@
 document.onload = GetInstallations()
-document.onload = setlinks()
-var linkliste = []
+// document.onload = setlinks()
 
 /**
  * Sets links on rows in tableasd
  */
 function setlinks() {
+  var linkliste = []
   linkliste = document.getElementsByName('installationLink')
   linkliste.forEach(l => {
     l.href = "installation.html"
@@ -15,12 +15,7 @@ function setlinks() {
 var installationList = []
 
 function GetInstallations() {
-  bbrid = localStorage.getItem("bbrid")
-  console.log(bbrid)
-
-  fetch(`https://lekondbrest.azurewebsites.net/api/installations/search?bbrid=${bbrid}`)
-    // fetch(`http://localhost:51456/api/installations/search?bbrid=${bbrid}`)
-    .then(response => response.json())
+  GetInstallationsAsync()
     .then(data => {
       installationList = data
 
@@ -29,7 +24,7 @@ function GetInstallations() {
       for (let i = 0; i < installationList.length; i++) {
         var str = `<div class="trow">`
 
-        str += `<a name="installationlink" class="cell" style="text-align: center;"><i style="font-size: 20px; color: grey;" class="fas fa-bookmark"></i></a>`
+        str += `<a name="installationLink" class="cell" style="text-align: center;"><i style="font-size: 20px; color: grey;" class="fas fa-bookmark"></i></a>`
         str += `<a name="installationLink" class="cell"><img style="width: inherit; max-width: 45px;" src="./common/dykkerflaske.jpg"alt=""></a>`
         str += `<a name="installationLink" class="cell">${installationList[i].make}</a>`
         str += `<a name="installationLink" class="cell">${installationList[i].productType}</a>`
@@ -65,7 +60,18 @@ function GetInstallations() {
         str += `</div>`
         table.innerHTML += str
       }
-
+      setlinks()
       console.log(installationList)
     });
+}
+
+async function GetInstallationsAsync() {
+  bbrid = localStorage.getItem("bbrid")
+  console.log(bbrid)
+
+  let response = await fetch(`https://lekondbrest.azurewebsites.net/api/installations/search?bbrid=${bbrid}`)
+  // fetch(`http://localhost:51456/api/installations/search?bbrid=${bbrid}`)
+  let data = await response.json()
+
+  return data
 }

@@ -1,8 +1,4 @@
 import {
-  selected
-} from '../modules/selection.js'
-
-import {
   navigate
 } from './navigate.js'
 /**
