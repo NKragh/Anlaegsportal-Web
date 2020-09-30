@@ -15,6 +15,7 @@ function setlinks() {
 var installationList = []
 
 function GetInstallations() {
+  document.getElementById('loader').style.visibility = "visible"
   GetInstallationsAsync()
     .then(data => {
       installationList = data
@@ -62,9 +63,13 @@ function GetInstallations() {
       }
       setlinks()
       console.log(installationList)
+      document.getElementById('loader').style.visibility = "hidden"
     });
 }
 
+/**
+ * Gets installations from API async
+ */
 async function GetInstallationsAsync() {
   bbrid = localStorage.getItem("bbrid")
   console.log(bbrid)
