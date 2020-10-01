@@ -1,6 +1,7 @@
 * {
     font-family: Helvetica;
 }
+
 a {
     color: black;
 }
@@ -23,7 +24,7 @@ ul {
     background: #f5f6f9;
     margin: 2px 0;
     cursor: pointer;
-    
+
 }
 
 .optionlist:hover {
@@ -168,4 +169,9 @@ li {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.mapimg {
+    max-height: 400px;
+    max-width: 400px
 }

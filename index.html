@@ -29,8 +29,9 @@
       </div>
       <div class="row" style="overflow: auto; display: block;">
         <label for="iaddress">Adresse:</label><br>
-        <input class="input" type="text" name="iaddress" id="iaddress" placeholder="Indtast adresse" list="addresses" autofocus="true">
-        <div style="width: fit-content;">
+        <input class="input" type="text" name="iaddress" id="iaddress" placeholder="Indtast adresse" list="addresses"
+          autofocus="true">
+        <div style="width: fit-content; z-index: 1;">
           <ul id="optionlist">
           </ul>
         </div>
@@ -40,11 +41,18 @@
           src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d140.7825975899064!2d12.083344703160089!3d55.62774023285229!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sda!2sdk!4v1600844646641!5m2!1sda!2sdk"
           width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
           tabindex="0"></iframe> -->
-        <img src="./common/map.png" width="400" height="400">
+        <img src="./common/map.png" class="mapimg">
       </div>
-      <div class="row">
+    </div>
+    <div class="col-sm" style="text-align: right;">
+      <div class="row" style="border-bottom: 1px solid black; display: block;">
+        <h4>Søg via QR-id her:</h4>
+      </div>
+      <div class="row" style="display: block;">
+        <label for="iqr">QR-id:</label><br>
+        <input type="text" name="iqr" id="iqr">
+      </div>
 
-      </div>
     </div>
 
     <script type="module" src="./js/index.js"></script>
