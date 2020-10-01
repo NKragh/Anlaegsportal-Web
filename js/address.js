@@ -3,7 +3,7 @@ import {
   getimage_url
 } from './storage.js'
 
-document.onload = GetInstallations
+document.onload = GetInstallations()
 
 /**
  * Sets links on rows in tableasd
