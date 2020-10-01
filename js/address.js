@@ -1,5 +1,9 @@
-document.onload = GetInstallations()
-// document.onload = setlinks()
+import {
+  sastoken,
+  getimage_url
+} from './storage.js'
+
+document.onload = GetInstallations
 
 /**
  * Sets links on rows in tableasd
@@ -8,7 +12,19 @@ function setlinks() {
   var linkliste = []
   linkliste = document.getElementsByName('installationLink')
   linkliste.forEach(l => {
-    l.href = "installation.html"
+    l.onclick = function () {
+      installationClick(l.getAttribute('id'))
+    }
+  });
+}
+
+function setlinks2() {
+  var linkliste = []
+  linkliste = Array.from(document.getElementsByClassName('actionbutton'))
+  linkliste.forEach(l => {
+    l.onclick = function () {
+      actionbuttonClick(l.getAttribute('name'))
+    }
   });
 }
 
@@ -23,45 +39,47 @@ function GetInstallations() {
       var table = document.getElementById('installationTable')
 
       for (let i = 0; i < installationList.length; i++) {
-        var str = `<div class="trow">`
+        const element = installationList[i]
+        var str = `<ul class="trow">`
 
-        str += `<a name="installationLink" class="cell" style="text-align: center;"><i style="font-size: 20px; color: grey;" class="fas fa-bookmark"></i></a>`
-        str += `<a name="installationLink" class="cell"><img style="width: inherit; max-width: 45px;" src="./common/dykkerflaske.jpg"alt=""></a>`
-        str += `<a name="installationLink" class="cell">${installationList[i].make}</a>`
-        str += `<a name="installationLink" class="cell">${installationList[i].productType}</a>`
-        str += `<a name="installationLink" class="cell">${installationList[i].bbrId}</a>`
-        str += `<a name="installationLink" class="cell">${installationList[i].lastReview}</a>`
-        str += `<a name="installationLink" class="cell">${installationList[i].responsible}</a>`
-        str += `<div class="cell">
-                  <div style="display: flex;">
-                    <a href="edit.html">
-                      <i class="actionbutton fas fa-pencil-alt"></i>
-                    </a>
-                    <a href="installation.html">
-                      <i class="actionbutton fas fa-archive"></i>
-                    </a>
-                    <a href="installation.html">
-                      <i class="actionbutton fas fa-plus-square"></i>
-                    </a>
-                    <a href="installation.html">
-                      <i class="actionbutton fas fa-stream"></i>
-                    </a>
-                    <a href="installation.html">
-                      <i class="actionbutton fas fa-clipboard-list"></i>
-                    </a>
-                    <a href="installation.html">
-                      <i class="actionbutton fas fa-comment-dots"></i>
-                    </a>
-                    <a href="installation.html">
-                      <i class="actionbutton fas fa-eye"></i>
-                    </a>
-                  </div>
-                </div>`
+        str += `<li name="installationLink" 
+                    id="${element.installationId}" 
+                    class="cell other" 
+                    style="text-align: center;">
+                      <i style="font-size: 20px; color: grey;" class="fas fa-bookmark actionbutton"></i>
+                </li>`
+        str += `<li name="installationLink" 
+                    id="${element.installationId}" 
+                    class="cell other image">
+                    <img style="width: inherit; max-width: 45px; height: 65px" class="actionbutton"
+                    src="${getimage_url}/${element.installationId}.jpg?${sastoken}">
+                </li>`
+        str += `<li name="installationLink" 
+                    id="${element.installationId}" 
+                    class="cell">${element.make}
+                </li>`
+        str += `<li name="installationLink" 
+                    id="${element.installationId}" 
+                    class="cell">${element.productType}
+                </li>`
+        str += `<li name="installationLink" id="${element.installationId}" class="cell">${element.bbrId}</li>`
+        str += `<li name="installationLink" id="${element.installationId}" class="cell">${element.lastReview}</li>`
+        str += `<li name="installationLink" id="${element.installationId}" class="cell">${element.responsible}</li>`
+        str += `<ul class="cell other">
+                    <li name="edit" class="actionbutton"><i class=" fas fa-pencil-alt"></i></li>
+                    <li name="archive" class="actionbutton"><i class=" fas fa-archive"></i></li>
+                    <li name="subinstallation" class="actionbutton"><i class=" fas fa-plus-square"></i></li>
+                    <li name="task" class="actionbutton"><i class=" fas fa-stream"></i></li>
+                    <li name="checklist" class="actionbutton"><i class=" fas fa-clipboard-list"></i></li>
+                    <li name="comment" class="actionbutton"><i class=" fas fa-comment-dots"></i></li>
+                    <li name="watch" class="actionbutton"><i class=" fas fa-eye"></i></li>
+                </ul>`
 
-        str += `</div>`
+        str += `</ul>`
         table.innerHTML += str
       }
       setlinks()
+      setlinks2()
       console.log(installationList)
       document.getElementById('loader').style.visibility = "hidden"
     });
@@ -71,7 +89,7 @@ function GetInstallations() {
  * Gets installations from API async
  */
 async function GetInstallationsAsync() {
-  bbrid = localStorage.getItem("bbrid")
+  var bbrid = localStorage.getItem("bbrid")
   console.log(bbrid)
 
   let response = await fetch(`https://lekondbrest.azurewebsites.net/api/installations/search?bbrid=${bbrid}`)
@@ -79,4 +97,38 @@ async function GetInstallationsAsync() {
   let data = await response.json()
 
   return data
+}
+
+function installationClick(id) {
+  localStorage.setItem('installationId', id)
+  window.location.href = "installation.html"
+}
+
+function actionbuttonClick(name) {
+  switch (name) {
+    case "edit":
+      console.log(`${name} button clicked`)
+      break;
+    case "archive":
+      console.log(`${name} button clicked`)
+      break;
+    case "subinstallation":
+      console.log(`${name} button clicked`)
+      break;
+    case "task":
+      console.log(`${name} button clicked`)
+      break;
+    case "checklist":
+      console.log(`${name} button clicked`)
+      break;
+    case "comment":
+      console.log(`${name} button clicked`)
+      break;
+    case "watch":
+      console.log(`${name} button clicked`)
+      break;
+    default:
+      console.log("test")
+      break;
+  }
 }

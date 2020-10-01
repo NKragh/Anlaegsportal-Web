@@ -10,6 +10,14 @@ a.header {
     color: #3a5b78;
 }
 
+a.menu {
+    color: white;
+}
+
+a.link {
+    color: blue;
+}
+
 ul {
     list-style-type: none;
     padding: 10px 0;
@@ -24,7 +32,6 @@ ul {
     background: #f5f6f9;
     margin: 2px 0;
     cursor: pointer;
-
 }
 
 .optionlist:hover {
@@ -42,12 +49,6 @@ a.optionlist:hover {
 
 .sidemenu {
     min-height: 600px;
-    /* border-bottom: 2px solid black; */
-    /* border: 2px solid black; */
-}
-
-a.menu {
-    color: white;
 }
 
 html {
@@ -115,6 +116,15 @@ li {
     display: table-cell;
     border: 1px solid lightslategrey;
     padding: 0 8px;
+    cursor: pointer;
+}
+
+.cell.other {
+    cursor: default;
+}
+
+.cell.image {
+    text-align: center;
 }
 
 .hcell {
@@ -129,6 +139,21 @@ li {
 .trow:hover {
     background-color: lightgray;
     color: black;
+}
+
+.mapimg {
+    max-height: 400px;
+    max-width: 400px
+}
+
+.actionbutton {
+    display: inline-block;
+    padding: 0 1px;
+}
+
+.actionbutton:hover {
+    color: #3a5b78;
+    cursor: pointer;
 }
 
 .loader {
@@ -169,9 +194,4 @@ li {
     100% {
         transform: rotate(360deg);
     }
-}
-
-.mapimg {
-    max-height: 400px;
-    max-width: 400px
 }
