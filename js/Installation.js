@@ -1,9 +1,20 @@
-var selectedAddress = ""
-var installationList = []
+import { rest_url } from "./storage.js";
 
-function GetInstallations() {
-  installationList = document.getElementsByClassName('optionlist')
 
-  console.log(installationList)
+document.onload = GetInformation()
+
+function GetInformation() {
+  try {
+    var qrid = localStorage.getItem('qrid')
+  } catch (error) {
+    var qrid = ""
+    console.log(error)
+  }
+    
+  fetch(`${rest_url}search?qrId=${qrid}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+    })
 
 }

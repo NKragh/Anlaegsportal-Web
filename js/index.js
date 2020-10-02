@@ -14,7 +14,8 @@ function changemap(data) {
   // kort.src = str
 }
 
-document.querySelector('input').addEventListener('input', search)
+document.getElementById('iaddress').addEventListener('input', search)
+document.getElementById('iqr').addEventListener('keypress', qrsearch)
 
 /**
  * Test function that gets installations from REST
@@ -65,4 +66,13 @@ function search() {
         })
       }
     })
+}
+
+
+function qrsearch() {
+  if (event.keyCode == 13) {
+    var qrid = this.value
+    localStorage.setItem('qrid', qrid)
+    navigate("installation")
+  }
 }
