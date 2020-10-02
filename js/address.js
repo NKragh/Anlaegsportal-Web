@@ -52,7 +52,7 @@ function GetInstallations() {
                     id="${element.installationId}" 
                     class="cell other image">
                     <img style="width: inherit; max-width: 45px; height: 65px" class="actionbutton"
-                    src="${getimage_url}/${element.installationId}.jpg?${sastoken}">
+                    src="${getimage_url}/${element.installationId}.jpg">
                 </li>`
         str += `<li name="installationLink" 
                     id="${element.installationId}" 

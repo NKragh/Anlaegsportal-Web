@@ -18,7 +18,7 @@ function GetDocuments() {
       parseXML(this)
     }
   }
-  xmlhttp.open("GET", `${getdocuments_url}/${installationId}?restype=directory&comp=list&${sastoken}`, true)
+  xmlhttp.open("GET", `${getdocuments_url}/?restype=container&comp=list`, true)
   xmlhttp.send()
 }
 
@@ -28,14 +28,14 @@ function GetDocuments() {
  */
 function GetHeaders(title) {
   let result = ""
-  fetch(`${getdocuments_url}/${installationId}/${title}?${sastoken}`, {
+  fetch(`${getdocuments_url}/${title}`, {
       method: 'HEAD'
     })
     .then(response => {
       const headers = Object.fromEntries(response.headers.entries())
       result = `<ul class="trow">`;
       result += `<li name="documentlink" class="cell">${headers['last-modified']}</li>`
-      result += `<li name="documentlink" class="cell"><a style="color: blue;" target="blank" href="${getdocuments_url}/${installationId}/${title}?${sastoken}">${title}</a></li>`
+      result += `<li name="documentlink" class="cell"><a style="color: blue;" target="blank" href="${getdocuments_url}/${title}">${title.split('/')[1]}</a></li>`
       result += `<li name="documentlink" class="cell">${headers['x-ms-meta-responsible']}</li>`
       result += `</ul>`
       document.getElementById('documentTable').innerHTML += result
@@ -48,6 +48,7 @@ function GetHeaders(title) {
  */
 function parseXML(xml) {
   let xmlDoc = xml.responseXML;
+  console.log(xml)
   let x = xmlDoc.getElementsByTagName('Name') //Title of the file is stored as "Name": <title>
   for (let i = 0; i < x.length; i++) {
     var title = x[i].childNodes[0].nodeValue
