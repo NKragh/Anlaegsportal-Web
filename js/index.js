@@ -70,7 +70,7 @@ function search() {
 
 
 function qrsearch() {
-  if (event.keyCode == 13) {
+  if (event.key == 'Enter') {
     var qrid = this.value
     localStorage.setItem('qrid', qrid)
     navigate("installation")

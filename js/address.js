@@ -57,7 +57,7 @@ function GetInstallations() {
                 </li>`
         str += `<li name="installationLink" 
                     id="${element.installationId}" 
-                    class="cell">${element.make}
+                    class="cell">${element.model}
                 </li>`
         str += `<li name="installationLink" 
                     id="${element.installationId}" 

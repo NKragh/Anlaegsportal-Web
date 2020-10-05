@@ -175,6 +175,11 @@ li {
     animation: spin 2s linear infinite;
 }
 
+.infokey {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
 /* Safari */
 @-webkit-keyframes spin {
     0% {
