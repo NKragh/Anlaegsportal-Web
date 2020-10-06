@@ -1,24 +1,7 @@
 import {
+  getimage_url,
   rest_url
 } from "./storage.js";
-
-var list = [
-  "Name",
-  "Produkt type",
-  "Produkt mærke",
-  "Produkt model",
-  "Pris",
-  "Dato for udløb af garanti",
-  "Ansvarlig",
-  "Kommentarer",
-  "Registreringsdato",
-  "Installationsdato",
-  "Dato for sidste eftersyn",
-  "Frekvens for eftersyn",
-  "Hvilken checkliste",
-  "Adresse",
-  "QR-kode"
-]
 
 document.onload = GetInformation()
 
@@ -50,33 +33,43 @@ async function GetInformation() {
             }
           }
         }
+        var picele = document.getElementById('infopic')
+        picele.src = `${getimage_url}/${inst.installationId}.jpg`
       })
   } else {
     myfetch('qrid') //
       .then(data => {
         const inst = data
+        localStorage.setItem('installationId', inst.installationId)
+        localStorage.setItem('bbrid', inst.bbrId)
         console.log(inst)
         for (const key in inst) {
           if (inst.hasOwnProperty(key)) {
+            var temp;
             const val = inst[key];
             // console.log(key, val)
-            var temp = document.getElementById(key)
             if (key == 'bbrId') {
-              fetch(`https://dawa.aws.dk/bbrlight/enheder?adresseid=${val}`)
+              fetch(`https://dawa.aws.dk/adresser/${val}`)
                 .then(response => response.json())
                 .then(data => {
-                  temp.innerHTML = '<i class="fas fa-map-marker-alt"></i>'
-                  // temp.innertext += val
+                  temp = document.getElementById(key)
 
-                  temp.href = `https://www.google.com/maps/place/${val}/`
+                  var address = data['adressebetegnelse']
+
+                  temp.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${address}`
+                  temp.href = `https://www.google.com/maps/place/${data['adressebetegnelse']}/`
                 })
             } else if (key == 'qrId') {
               continue
             } else {
+              temp = document.getElementById(key)
               temp.innerText = val
             }
           }
         }
+        var picele = document.getElementById('infopic')
+        picele.src = `${getimage_url}/${inst.installationId}.jpg`
+
       })
   }
 }
