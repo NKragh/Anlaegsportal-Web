@@ -23,9 +23,16 @@ async function GetInformation() {
             // console.log(key, val)
             var temp = document.getElementById(key)
             if (key == 'bbrId') {
-              temp.innerHTML = '<i class="fas fa-map-marker-alt"></i>'
-              temp.innertext += val
-              temp.href = `https://www.google.com/maps/place/${val}/`
+              fetch(`https://dawa.aws.dk/adresser/${val}`)
+                .then(response => response.json())
+                .then(data => {
+                  temp = document.getElementById(key)
+
+                  var address = data['adressebetegnelse']
+
+                  temp.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${address}`
+                  temp.href = `https://www.google.com/maps/place/${data['adressebetegnelse']}/`
+                })
             } else if (key == 'qrId') {
               continue
             } else {
