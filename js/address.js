@@ -1,5 +1,4 @@
 import {
-  sastoken,
   getimage_url,
   rest_url
 } from './storage.js'
@@ -93,7 +92,7 @@ async function GetInstallationsAsync() {
   var bbrid = localStorage.getItem("bbrid")
   console.log(bbrid)
 
-  let response = await fetch(`${rest_url}search?bbrid=${bbrid}`)
+  let response = await fetch(`${rest_url}/search?bbrid=${bbrid}`)
   // fetch(`http://localhost:51456/api/installations/search?bbrid=${bbrid}`)
   let data = await response.json()
 

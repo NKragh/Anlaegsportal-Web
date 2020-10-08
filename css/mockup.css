@@ -20,7 +20,6 @@ a.link {
 
 ul {
     list-style-type: none;
-    padding: 10px 0;
 }
 
 .optionlist {
@@ -115,7 +114,7 @@ li {
 .cell {
     display: table-cell;
     border: 1px solid lightslategrey;
-    padding: 0 8px;
+    padding: 8px;
     cursor: pointer;
 }
 

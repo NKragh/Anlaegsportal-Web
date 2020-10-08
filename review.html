@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Reviews</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,83 +31,20 @@
                 <h4><strong>Review Results</strong></h4>
             </div>
             <div class="row">
-
-                <table>
-                    <tr>
-                        <th>Date</th>
-                        <th>Review name</th>
-                        <th>Responsible</th>
-                        <th>Status</th>
-                    </tr>
-                    <tr>
-                        <td>1/1-20</td>
-                        <td>Pressure check</td>
-                        <td>B-Tech Inspection</td>
-                        <td>OK <i style="color: green;" class="fas fa-thumbs-up"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1/1-18</td>
-                        <td>Pressure Check</td>
-                        <td>Carsten ApS</td>
-                        <td>OK <i style="color: green;" class="fas fa-thumbs-up"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1/1-16</td>
-                        <td>Pressure Check</td>
-                        <td>Carsten ApS</td>
-                        <td>OK <i style="color: green;" class="fas fa-thumbs-up"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1/1-14</td>
-                        <td>Pressure Check</td>
-                        <td>Birgers Trykprøver ApS</td>
-                        <td>OK <i style="color: green;" class="fas fa-thumbs-up"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1/1-12</td>
-                        <td>Pressure Check</td>
-                        <td>Birgers Trykprøver ApS</td>
-                        <td>OK <i style="color: green;" class="fas fa-thumbs-up"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1/1-10</td>
-                        <td>Pressure Check</td>
-                        <td>Giant Cooperation A/S</td>
-                        <td>OK <i style="color: green;" class="fas fa-thumbs-up"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1/1-08</td>
-                        <td>Pressure Check</td>
-                        <td>Giant Cooperation A/S</td>
-                        <td>OK <i style="color: green;" class="fas fa-thumbs-up"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1/1-06</td>
-                        <td>Pressure Check</td>
-                        <td>Giant Cooperation A/S</td>
-                        <td>OK <i style="color: green;" class="fas fa-thumbs-up"></i></td>
-                    </tr>
-                    <tr>
-                        <td>1/1-04</td>
-                        <td>Pressure Check</td>
-                        <td>Giant Cooperation A/S</td>
-                        <td>OK <i style="color: green;" class="fas fa-thumbs-up"></i></td>
-                    </tr>
-                </table>
-
+                <div class="table" id="reviewTable">
+                    <div class="trow">
+                        <div class="hcell">Date</div>
+                        <div class="hcell">Review name</div>
+                        <div class="hcell">Responsible</div>
+                        <div class="hcell">Documentation</div>
+                        <div class="hcell">Status</div>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+    <script type="module" src="./js/review.js"></script>
 
     <script>
         $(function () {
