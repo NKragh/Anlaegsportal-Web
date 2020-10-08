@@ -46,26 +46,33 @@ function search() {
   var value = ele.value
 
   // console.log(value)asd
+  if (value.length >= 3) {
 
-  fetch(`https://dawa.aws.dk/adresser/autocomplete?q=${value} &fuzzy=`)
-    .then(response => response.json())
-    .then(data => {
-      // console.log(data)
-      var liste = document.getElementById('optionlist')
-      liste.innerHTML = ""
-      coordinate = []
-      data.forEach(a => {
-        // console.log(a)
-        liste.innerHTML += `<li class="optionlist" id="${a.adresse.id}">${a.tekst}</li>`
-      });
-      var temp = document.getElementsByClassName('optionlist')
-      for (const li of temp) {
-        li.addEventListener('click', function () {
-          localStorage.setItem('bbrid', li.id)
-          navigate('address')
-        })
-      }
-    })
+    fetch(`https://dawa.aws.dk/adresser/autocomplete?q=${value} &fuzzy=`)
+      .then(response => response.json())
+      .then(data => {
+        // console.log(data)
+        var liste = document.getElementById('optionlist')
+        liste.innerHTML = ""
+        coordinate = []
+        data.forEach(a => {
+          // console.log(a)
+          liste.innerHTML += `<li class="optionlist" id="${a.adresse.id}">${a.tekst}</li>`
+        });
+        var temp = document.getElementsByClassName('optionlist')
+        for (const li of temp) {
+          li.addEventListener('click', function () {
+            localStorage.setItem('bbrid', li.id)
+            navigate('address')
+          })
+        }
+      })
+
+  } else {
+    var liste = document.getElementById('optionlist')
+    liste.innerHTML = ""
+
+  }
 }
 
 
