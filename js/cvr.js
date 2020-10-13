@@ -17,7 +17,7 @@ function hentcvr() {
       })
       .then(response => response.json())
       .then(data => {
-        // console.log(data)
+        console.log(data)
         fyldresult(data)
         let list = document.getElementById('resultlist')
         for (const key in data) {

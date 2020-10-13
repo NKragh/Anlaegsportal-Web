@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Mockup for one installation</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <script src="https://kit.fontawesome.com/a29e7d9b96.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/edit.css" />
+</head>
+
+<header id="headerplaceholder"></header>
+
+<body>
+  <div class="row sidemenu">
+    <!-- <div class="col-sm-auto" style="background-color: #3a5b78;" id="navbarplaceholder"></div> -->
+    <div class="col-sm">
+      <div class="row" style="border-bottom: 1px solid black;">
+        <h2><strong>General infomation</strong></h2>
+        <div style="position: absolute; right: 0; display: flex; width: 50%; flex-direction: row-reverse;">
+          <button id="cancelbtn" style="flex: .2; margin: 8px">Cancel</button>
+          <button id="savebtn" style="flex: .2; margin: 8px">Save</button>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-md">
+          <div class="row">
+            <div class="col">
+              <div class="row">
+                <div class="col">
+                  <h1>Generel</h1>
+                  <p class="infokey">Produkt type</p>
+                  <p contenteditable="true" class="infoval" id="productType"></p>
+                  <p class="infokey">Produkt mærke</p>
+                  <p contenteditable="true" class="infoval" id="make"></p>
+                  <p class="infokey">Produkt model</p>
+                  <p contenteditable="true" class="infoval" id="model"></p>
+                </div>
+                <div class="col"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="row">
+                <div class="col">
+                  <h1>Eftersyn og installation</h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+
+                  <p class="infokey">Ansvarlig</p>
+                  <p contenteditable="true" class="infoval" id="responsible"></p>
+                  <p class="infokey">Installationsdato</p>
+                  <p contenteditable="true" class="infoval" id="installationDate"></p>
+                  <p class="infokey">Registreringsdato</p>
+                  <p contenteditable="true" class="infoval" id="registrationDate"></p>
+                </div>
+
+                <div class="col">
+
+                  <p class="infokey">Dato for sidste eftersyn</p>
+                  <p contenteditable="true" class="infoval" id="lastReview"></p>
+                  <p class="infokey">Frekvens for eftersyn (hvor ofte)</p>
+                  <p contenteditable="true" class="infoval" id="reviewFrequency"></p>
+                  <p class="infokey">Hvilken checkliste</p>
+                  <p contenteditable="true" class="infoval" id="checklistId"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="row">
+                <div class="col">
+                  <h1>Andet</h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p class="infokey">Ejer</p>
+                  <input type="list" list="ownerlist" id="owner" name="owner" style="width: 100%;">
+                  <datalist id="ownerlist"></datalist>
+                  <p class="infokey">Dato for udløb af garanti</p>
+                  <p contenteditable="true" class="infoval" id="warrantyDate"></p>
+
+                </div>
+                <div class="col">
+
+                  <p class="infokey">Pris</p>
+                  <p contenteditable="true" class="infoval" id="price"></p>
+                  <p class="infokey">Kommentarer (fritekst)</p>
+                  <p contenteditable="true" class="infoval" id="comment"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-2">
+
+          <p class="infokey">Billede</p>
+          <img id="infopic" alt="Billede af anlæg" style="width: inherit; max-width: 20vw; ">
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+
+    <script type="module" src="./js/edit.js"></script>
+
+    <script>
+      $(function () {
+        $("#navbarplaceholder").load("navbar.html");
+        $("#headerplaceholder").load("header.html")
+      });
+    </script>
+</body>
+
+</html>
