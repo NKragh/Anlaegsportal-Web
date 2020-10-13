@@ -178,6 +178,11 @@ li {
 .infokey {
     font-weight: bold;
     margin-bottom: 0;
+    display: block;
+}
+
+.infoval {
+    display: block;
 }
 
 /* Safari */

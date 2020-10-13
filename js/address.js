@@ -1,4 +1,5 @@
 import {
+  local_url,
   getimage_url,
   rest_url
 } from './storage.js'
@@ -65,15 +66,7 @@ function GetInstallations() {
         str += `<li name="installationLink" id="${element.installationId}" class="cell">${element.bbrId}</li>`
         str += `<li name="installationLink" id="${element.installationId}" class="cell">${element.lastReview}</li>`
         str += `<li name="installationLink" id="${element.installationId}" class="cell">${element.responsible}</li>`
-        str += `<ul class="cell other">
-                    <li name="edit" class="actionbutton"><i class=" fas fa-pencil-alt"></i></li>
-                    <li name="archive" class="actionbutton"><i class=" fas fa-archive"></i></li>
-                    <li name="subinstallation" class="actionbutton"><i class=" fas fa-plus-square"></i></li>
-                    <li name="task" class="actionbutton"><i class=" fas fa-stream"></i></li>
-                    <li name="checklist" class="actionbutton"><i class=" fas fa-clipboard-list"></i></li>
-                    <li name="comment" class="actionbutton"><i class=" fas fa-comment-dots"></i></li>
-                    <li name="watch" class="actionbutton"><i class=" fas fa-eye"></i></li>
-                </ul>`
+
 
         str += `</ul>`
         table.innerHTML += str
