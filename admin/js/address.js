@@ -2,7 +2,7 @@ import {
   local_url,
   getimage_url,
   rest_url
-} from './storage.js'
+} from '../../js/storage.js'
 
 document.onload = GetInstallations()
 
@@ -24,7 +24,7 @@ function setlinks2() {
   linkliste = Array.from(document.getElementsByClassName('actionbutton'))
   linkliste.forEach(l => {
     l.onclick = function () {
-      actionbuttonClick(l.getAttribute('name'))
+      actionbuttonClick(l.getAttribute('name'), l.getAttribute('id'))
     }
   });
 }
@@ -55,6 +55,51 @@ function GetInstallations() {
         str += `<li name="installationLink" id="${element.installationId}" class="cell">${element.lastReview}</li>`
         str += `<li name="installationLink" id="${element.installationId}" class="cell">${element.responsible}</li>`
 
+        str += `<ul class="cell other">
+                    <li id="${element.installationId}" name="edit" class="actionbutton">
+                      <div class="actionbuttoncontainer">
+                        <i class=" fas fa-pencil-alt"></i>
+                        Edit
+                      </div>
+                    </li>
+                    <li id="${element.installationId}" name="archive" class="actionbutton">
+                      <div class="actionbuttoncontainer">
+                        <i class=" fas fa-archive"></i>
+                        archive
+                      </div>
+                    </li>
+                    <li id="${element.installationId}" name="subinstallation" class="actionbutton">
+                      <div class="actionbuttoncontainer">
+                        <i class=" fas fa-plus-square"></i>
+                        Subinstallation
+                      </div>
+                    </li>
+                    <li id="${element.installationId}" name="task" class="actionbutton">
+                      <div class="actionbuttoncontainer">
+                        <i class=" fas fa-stream"></i>
+                        Task
+                      </div>
+                    </li>
+                    <li id="${element.installationId}" name="checklist" class="actionbutton">
+                      <div class="actionbuttoncontainer">
+                        <i class=" fas fa-clipboard-list"></i>
+                        Checklist
+                      </div>
+                    </li>
+                    <li id="${element.installationId}" name="comment" class="actionbutton">
+                      <div class="actionbuttoncontainer">
+                        <i class=" fas fa-comment-dots"></i>
+                        Comment
+                      </div>
+                    </li>
+                    <li id="${element.installationId}" name="watch" class="actionbutton">
+                      <div class="actionbuttoncontainer">
+                        <i class=" fas fa-eye"></i>
+                        Watch
+                      </div>
+                    </li>
+                </ul>`
+
         str += `</ul>`
         table.innerHTML += str
       }
@@ -84,10 +129,12 @@ function installationClick(id) {
   window.location.href = "installation.html"
 }
 
-function actionbuttonClick(name) {
+function actionbuttonClick(name, id) {
   switch (name) {
     case "edit":
       console.log(`${name} button clicked`)
+      localStorage.setItem('installationId', id)
+      window.location.href = "edit.html"
       break;
     case "archive":
       console.log(`${name} button clicked`)

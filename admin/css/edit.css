@@ -2,6 +2,21 @@
     font-family: Helvetica;
 }
 
+.actionbuttoncontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.6em;
+}
+
+.actionbuttoncontainer i {
+    font-size: 1.2rem;
+}
+
+::placeholder {
+    color: black;
+}
+
 a {
     color: black;
 }
@@ -181,12 +196,14 @@ li {
     display: block;
 }
 
-.infoval {
-    display: block;
+p[contenteditable="true"] {
     border: 1px solid grey;
+    display: block;
     border-radius: 5px;
     padding: 2px;
 }
+
+.infoval {}
 
 /* Safari */
 @-webkit-keyframes spin {

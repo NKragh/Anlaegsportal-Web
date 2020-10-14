@@ -2,6 +2,10 @@
     font-family: Helvetica;
 }
 
+::placeholder {
+    color: black;
+}
+
 a {
     color: black;
 }

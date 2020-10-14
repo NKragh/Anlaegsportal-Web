@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Reviews</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <link rel="icon" href="LE logo mikro.png" type="image/png" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <script src="https://kit.fontawesome.com/a29e7d9b96.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/edit.css">
+
+    <header id="headerplaceholder"></header>
+
+    <!-- https://www.google.com/maps/place/@55.6277243,12.0805315,17z/ -->
+
+<body>
+    <div class="row sidemenu">
+        <div class="col-sm-auto" style="background-color: #3a5b78;" id="navbarplaceholder"></div>
+        <div class="col">
+            <div class="row">
+                <h2><strong>Diving bottle</strong></h2>
+                <div style="position: absolute; right: 0; display: flex; width: 50%; flex-direction: row-reverse;">
+                    <button id="uploadbtn" style="flex: .15; margin: 8px">
+                        <i class=" fas fa-plus"></i>
+                        Upload
+                    </button>
+                </div>
+
+            </div>
+            <div class="row" style="border-bottom: 1px solid black;">
+                <h4><strong>Review Results</strong></h4>
+            </div>
+            <div class="row">
+                <div class="table" id="reviewTable">
+                    <div class="trow">
+                        <div class="hcell">Date</div>
+                        <div class="hcell">Review name</div>
+                        <div class="hcell">Responsible</div>
+                        <div class="hcell">Documentation</div>
+                        <div class="hcell">Status</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./js/review.js"></script>
+
+    <script>
+        $(function () {
+            $("#navbarplaceholder").load("navbar.html");
+            $("#headerplaceholder").load("header.html")
+        });
+    </script>
+</body>
+
+</html>

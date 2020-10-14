@@ -26,14 +26,25 @@
           <label for="pass">Password: </label><br>
           <input type="text" name="pass" id="pass">
         </div>
-        <button onclick="javascript: window.location.href = 'edit.html'">Login</button>
+        <button onclick="login()">Login</button>
       </div>
     </div>
   </div>
 
 
 
-  <script type="module" src="./js/index.js"></script>
+  <script>
+    function login() {
+      var ref = document.referrer.split('/')[3]
+      if (ref == "admin" || ref == "") {
+        //Hvis vi ikke kommer noget sted fra, så gå til adressen
+        window.location.href = "search.html"
+      } else {
+        //Sender til admin versionen af samme side som vi kommer fra
+        window.location.href = ref
+      }
+    }
+  </script>
 </body>
 
 </html>

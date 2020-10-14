@@ -16,7 +16,7 @@
 
     <!-- Custom CSS -->
     <script src="https://kit.fontawesome.com/a29e7d9b96.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/mockup.css" />
+    <link rel="stylesheet" href="./css/edit.css" />
 </head>
 
 <header id="headerplaceholder"></header>
@@ -27,6 +27,13 @@
         <div class="col-sm">
             <div class="row" style="border-bottom: 1px solid black;">
                 <h2><strong>Installation</strong></h2>
+                <div style="position: absolute; right: 0; display: flex; width: 50%; flex-direction: row-reverse;">
+                    <button id="editbtn" style="flex: .2; margin: 8px">
+                        <i class=" fas fa-pencil-alt"></i>
+                        Edit
+                    </button>
+                </div>
+
             </div>
             <div class="row">
                 <div class="col-md">
@@ -83,8 +90,8 @@
                                     <p class="infokey">Adresse</p>
                                     <a class="link" href="" id="address">Addresse ikke fundet.</a>
                                     <p class="infokey">QR-kode</p>
-                                    <a download="QR-code.png" href="./common/qr-code.png" target="QR-Code"><img
-                                            src="./common/qr-code.png" alt="" class="qr"></a>
+                                    <a download="QR-code.png" href="../../common/qr-code.png" target="QR-Code"><img
+                                            src="../../common/qr-code.png" alt="" class="qr"></a>
 
                                     <p class="infokey">Ejer</p>
                                     <p class="infoval" id="owner"></p>
