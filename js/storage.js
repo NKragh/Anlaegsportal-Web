@@ -1,4 +1,4 @@
-const sastoken = "st=2020-10-02T07%3A15%3A36Z&se=2021-01-30T23%3A00%3A00Z&sp=rl&sv=2018-03-28&sr=s&sig=nxy8kWzTC5%2B93yz0OAgMkxh897TTPs81i1%2FFKANkwKI%3D"
+const sastoken = "?sv=2019-10-10&si=documents-1752DCEE036&sr=c&sig=3w%2B7L3jGfXiQA0yFNzw6e0jFd82e%2BMQkQia4Xm4QKuo%3D"
 const getdocuments_url = "https://anlaegsportalstorage.blob.core.windows.net/documents";
 const getreviews_url = "https://anlaegsportalstorage.blob.core.windows.net/reviews";
 const getimage_url = "https://anlaegsportalstorage.blob.core.windows.net/images";

@@ -37,6 +37,9 @@ function GetHeaders(title) {
     })
     .then(response => {
       const headers = Object.fromEntries(response.headers.entries())
+      if (title.split('/')[0] != installationId) {
+        return
+      }
       result = `<ul class="trow">`;
       result += `<li name="documentlink" class="cell">${headers['last-modified']}</li>`
       result += `<li name="documentlink" class="cell"><a style="color: blue;" target="blank" href="${getdocuments_url}/${title}">${title.split('/')[1]}</a></li>`
