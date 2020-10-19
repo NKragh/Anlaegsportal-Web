@@ -15,7 +15,7 @@ var installation;
 async function GetInformation() {
   const installationId = localStorage.getItem('installationId');
 
-  fetch(`${local_url}/${installationId}`)
+  fetch(`${rest_url}/${installationId}`)
     .then(response => response.json())
     .then(data => {
       const inst = data
@@ -40,7 +40,7 @@ async function GetInformation() {
 }
 
 function GetOwners() {
-  fetch(`${local_url}/owners`)
+  fetch(`${rest_url}/owners`)
     .then(response => response.json())
     .then(data => {
       // console.log(data)
@@ -98,7 +98,7 @@ function save() {
 }
 
 function put(installation) {
-  fetch(`${local_url}/${installation['installationId']}`, {
+  fetch(`${rest_url}/${installation['installationId']}`, {
     method: 'PUT',
     body: JSON.stringify(installation),
     headers: {

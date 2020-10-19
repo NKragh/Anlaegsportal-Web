@@ -7,7 +7,7 @@ import {
 document.onload = GetReviews()
 
 document.getElementById('uploadbtn').addEventListener('click', () => {
-  window.location.href = "upload.html"
+  alert("Placeholder for checklist.")
 })
 
 function GetReviews() {

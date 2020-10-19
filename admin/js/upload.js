@@ -11,13 +11,15 @@ var file;
 function SendDocument() {
   var installationId = localStorage.getItem('installationId')
   const now = new Date()
+  var responsible = document.getElementById('responsible')
   fetch(`${getdocuments_url}/${installationId}/${file.name}${sastoken}`, {
       'method': 'PUT',
       'content-length': file.size,
       'body': file,
       'headers': {
         'x-ms-date': now.toDateString(),
-        'x-ms-blob-type': 'BlockBlob'
+        'x-ms-blob-type': 'BlockBlob',
+        'x-ms-meta-responsible': responsible.value
       }
     })
     .then(result => {

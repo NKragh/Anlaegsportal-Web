@@ -37,6 +37,7 @@ function GetHeaders(title) {
     })
     .then(response => {
       const headers = Object.fromEntries(response.headers.entries())
+      // console.log(headers)
       if (title.split('/')[0] != installationId) {
         return
       }
@@ -55,7 +56,7 @@ function GetHeaders(title) {
  */
 function parseXML(xml) {
   let xmlDoc = xml.responseXML;
-  console.log(xml)
+  // console.log(xml)
   let x = xmlDoc.getElementsByTagName('Name') //Title of the file is stored as "Name": <title>
   for (let i = 0; i < x.length; i++) {
     var title = x[i].childNodes[0].nodeValue

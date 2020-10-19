@@ -12,7 +12,7 @@ async function GetInformation() {
   if (ref.split('/')[3] == "address.html") {
     const installationId = localStorage.getItem('installationId');
 
-    fetch(`${local_url}/${installationId}`)
+    fetch(`${rest_url}/${installationId}`)
       .then(response => response.json())
       .then(data => {
         const inst = data
@@ -40,7 +40,7 @@ async function GetInformation() {
       })
   } else {
     var qrid = localStorage.getItem('qrid')
-    fetch(`${local_url}/search?qrid=${qrid}`)
+    fetch(`${rest_url}/search?qrid=${qrid}`)
       .then(response => response.json())
       .then(data => {
         const inst = data[0]
