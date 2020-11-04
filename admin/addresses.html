@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Anlæg på adresse</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <link rel="icon" href="../LE logo mikro.png" type="image/png" />
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <script src="https://kit.fontawesome.com/a29e7d9b96.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./css/edit.css">
+
+</head>
+
+<header id="headerplaceholder"></header>
+
+<body>
+  <div class="row sidemenu a">
+
+    <div class="col-sm">
+      <div class="row" style="border-bottom: 1px solid black;">
+        <h4>Find din adresse her:</h4>
+      </div>
+      <div class="row" style="overflow: auto; display: block;">
+        <label for="iaddress">Adresse:</label><br>
+        <input class="input" type="text" name="iaddress" id="iaddress" placeholder="Indtast adresse" autofocus="true">
+        <div style="width: fit-content; z-index: 1;">
+          <ul id="optionlist">
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm" style="text-align: right;">
+      <div class="row" style="border-bottom: 1px solid black; display: block;">
+        <h4>Søg via QR-id her:</h4>
+      </div>
+      <div class="row" style="display: block;">
+        <label for="iqr">QR-id:</label><br>
+        <input type="text" name="iqr" id="iqr" autocomplete="off">
+      </div>
+
+    </div>
+  </div>
+  <div class="row sidemenu a">
+    <div class="col-sm">
+      <div class="row" style="border-bottom: 1px solid black;">
+        <h4>Adresses with my installations</h4>
+      </div>
+      <div class="row" style="overflow: auto;">
+
+        <div class="table" id="installationTable">
+          <div class="trow">
+            <div class="hcell">Tag</div>
+            <div class="hcell">Street name</div>
+            <div class="hcell">Postal code</div>
+            <div class="hcell">City name</div>
+            <div class="hcell">Amount of installations</div>
+            <div class="hcell">Due date</div>
+          </div>
+          <ul class="trow">
+            <li class="cell other center">
+              <i style="font-size: 20px; color: grey;" class="fas fa-bookmark actionbutton"></i>
+            </li>
+            <li class="cell other">Penselstrøget 6</li>
+            <li class="cell">4000</li>
+            <li class="cell">Roskilde</li>
+            <li class="cell">4</li>
+            <li class="cell">04/11-2020</li>
+          </ul>
+          <ul class="trow">
+            <li class="cell other center">
+              <i style="font-size: 20px; color: grey;" class="fas fa-bookmark actionbutton"></i>
+            </li>
+            <li class="cell other">Penselstrøget 8</li>
+            <li class="cell">4000</li>
+            <li class="cell">Roskilde</li>
+            <li class="cell">7</li>
+            <li class="cell">04/11-2020</li>
+          </ul>
+          <ul class="trow">
+            <li class="cell other center">
+              <i style="font-size: 20px; color: grey;" class="fas fa-bookmark actionbutton"></i>
+            </li>
+            <li class="cell other">Penselstrøget 10</li>
+            <li class="cell">4000</li>
+            <li class="cell">Roskilde</li>
+            <li class="cell">2</li>
+            <li class="cell">04/11-2020</li>
+          </ul>
+          <ul class="trow">
+            <li class="cell other center">
+              <i style="font-size: 20px; color: grey;" class="fas fa-bookmark actionbutton"></i>
+            </li>
+            <li class="cell other">Penselstrøget 15</li>
+            <li class="cell">4000</li>
+            <li class="cell">Roskilde</li>
+            <li class="cell">3</li>
+            <li class="cell">04/11-2020</li>
+          </ul>
+          <ul class="trow">
+            <li class="cell other center">
+              <i style="font-size: 20px; color: grey;" class="fas fa-bookmark actionbutton"></i>
+            </li>
+            <li class="cell other">Penselstrøget 17</li>
+            <li class="cell">4000</li>
+            <li class="cell">Roskilde</li>
+            <li class="cell">14</li>
+            <li class="cell">04/11-2020</li>
+          </ul>
+          <ul class="trow">
+            <li class="cell other center">
+              <i style="font-size: 20px; color: grey;" class="fas fa-bookmark actionbutton"></i>
+            </li>
+            <li class="cell other">Penselstrøget 30</li>
+            <li class="cell">4000</li>
+            <li class="cell">Roskilde</li>
+            <li class="cell">5</li>
+            <li class="cell">04/11-2020</li>
+          </ul>
+        </div>
+        <!-- <div class="loader" id="loader"></div> -->
+      </div>
+    </div>
+
+    <script type="module" src="./js/addresses.js"></script>
+
+    <script>
+      $(function () {
+        $("#navbarplaceholder").load("navbar.html");
+        $("#headerplaceholder").load("header.html");
+      });
+    </script>
+
+</body>
+
+</html>
